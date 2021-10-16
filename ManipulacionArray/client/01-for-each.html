@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <h1>Reto Lista de tareas </h1>
+    <div id="task"></div>
+<script>
+const tasks=[
+{title:'Terminar este curso:',done:false},
+{title:'Hacer el almuerzo',done:true},
+{title:'Bañarme',done:true},
+{title:'desayunar',done:true},
+
+]
+const task= document.getElementById('task');
+
+tasks.forEach(tarea=>{
+    let input= document.createElement('input'),
+    li=document.createElement('li');
+    input.type='checkbox';
+
+    if(tarea.done===true){
+     input.checked=true;
+    }
+
+
+
+    task.innerHTML +=`<li>
+        ${tarea.title}
+        - <input type="checkbox" ${tarea.done ? 'checked':''}      >
+        </li>`;
+
+
+})
+
+
+
+    const products= [
+    {title:'Burger',price:121 },
+    {title:'Pizza',price:20 }
+    ]
+
+    
+    const app= document.getElementById('app');
+
+    products.forEach(products=> {
+        app.innerHTML +=`<li>${products.title}-${products.price}</li>`;
+
+    })
+
+
+</script>
+</body>
+</html>
